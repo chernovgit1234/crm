@@ -1,0 +1,22 @@
+.telegram {
+
+
+    &__content {
+    }
+
+    &__input {
+      
+    }
+
+    &__btn {
+        color: whitesmoke;
+        background-color: rgb(26, 169, 179);
+        @media (any-hover: hover){
+            &:hover{
+                color: rgb(26, 169, 179);
+                background-color: rgba(85, 175, 181, 0.576);
+            }
+        }
+    }
+}
+

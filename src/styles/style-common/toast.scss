@@ -1,0 +1,58 @@
+#toast {
+    position: fixed;
+    bottom: rem(10);
+    right: rem(10);
+    min-width: rem(400);
+    height: rem(50);
+    
+    font-size: rem(22);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: rem(10) rem(10);
+    z-index: 10;
+    border-radius: rem(8);
+
+    backdrop-filter: blur(2px) saturate(480%);
+    -webkit-backdrop-filter: blur(2px) saturate(180%);
+    
+    //transition: all 0.3s ease 0s;
+
+    animation-delay: 2s;
+    animation: fade 8s ease both;
+
+  }
+  .error-toast {
+    background-color: rgba(202, 73, 73, 0.729);
+    color: rgb(246, 232, 232);
+    @media (any-hover: hover){
+        &:hover{
+            background-color: rgba(206, 110, 110, 0.729);
+        }
+    }
+  }
+  .info-toast {
+    background-color: rgba(84, 160, 215, 0.729);
+    color: rgb(246, 232, 232);
+    @media (any-hover: hover){
+        &:hover{
+            background-color: rgba(121, 177, 218, 0.729);
+        }
+    }
+  }
+  
+
+
+  @keyframes fade {
+    from {
+      opacity: 1;
+      //visibility: visible;
+      display: block;
+    }
+    to {
+      opacity: 0;
+      //visibility: hidden;
+      display: none;
+    }
+  }

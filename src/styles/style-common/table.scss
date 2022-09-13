@@ -1,0 +1,46 @@
+.table {
+
+    &__body {
+    }
+
+    &__header {
+        height: rem(50);
+        border: 1px solid rgb(195, 197, 207);
+        display: grid;
+        color: rgb(151, 133, 120);
+    }
+
+    &__column-name {
+      border: 1px solid rgb(195, 197, 207);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: rem(14);
+      font-weight: 500;
+      //width: rem(117);
+
+    }
+
+    &__content {
+        
+    }
+    
+    &__row {
+        display: grid;
+        flex-wrap: nowrap;
+        height: rem(30);
+    }
+
+    &__row-data {
+        border: 1px solid rgb(195, 197, 207); 
+    }
+    
+
+    &__footer {
+        height: rem(50);
+        border: 1px solid rgb(195, 197, 207);
+    }
+
+
+    
+}

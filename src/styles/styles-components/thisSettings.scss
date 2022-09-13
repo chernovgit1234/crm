@@ -1,0 +1,66 @@
+.settings {
+    width: 100vw;
+    height: 100%;
+
+    &__body {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__section {
+        display: block;
+    }
+
+    &__title {
+        font-size: rem(22);
+        font-weight: 500;
+        color: $textSettinsColor;
+        padding-bottom: rem(10);
+        
+    }
+
+    &__line {
+        border: 0;
+        clear:both;
+        display:block;               
+        background-color: $hrSettinsColor;
+        height: 1px;
+    }
+
+    &__content {
+    }
+}
+
+.content-settings {
+
+    &__form {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        @media (max-width:em(1250)){
+            flex-direction: column;     
+        }
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+
+        
+    }
+
+    &__submit {
+        border-radius: rem(8);
+        background-color: rgb(234, 167, 66);
+        color: white;
+        @media (any-hover: hover){
+            &:hover{
+                outline: 2px solid rgb(234, 167, 66);
+                background-color: white;
+                color: $mainColor;
+            }
+        }
+    }
+}
+

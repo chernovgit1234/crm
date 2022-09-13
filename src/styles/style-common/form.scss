@@ -1,0 +1,44 @@
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+    
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        small {
+            position: absolute;
+            left: rem(14);
+            color: red;
+            top: rem(56);
+            font-size: rem(12);
+        }
+    }
+
+    &__label {
+        position: absolute;
+        left: rem(15);
+        top: rem(0);
+        font-size: rem(14);
+    }
+
+    &__input {
+        //border-radius: rem(5);
+    }
+
+    &__error {
+    }
+}
+
+
+.label-error {
+    color: red;
+}
+
+.input-error {
+    border-bottom: 1px solid red;
+    color: red;
+}

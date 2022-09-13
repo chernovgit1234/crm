@@ -1,0 +1,84 @@
+@import "./null.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./styles-components/home.scss";
+@import "./styles-components/thisHeader.scss";
+@import "./styles-components/thisNavbar.scss";
+@import "./styles-components/thisSettings.scss";
+@import "./styles-components/thisAuth.scss";
+@import "./styles-components/thisPopup.scss";
+@import "./style-common/form.scss";
+@import "./style-common/toast.scss";
+@import "./style-common/input.scss";
+@import "./style-common/table.scss";
+@import "./styles-components/task/createTask.scss";
+@import "./styles-components/task/indexTask.scss";
+@import "./styles-components/ThisTelegramSignInStyles.scss";
+
+.btn {
+    display: block;
+    padding: rem(10) rem(15);
+    font-weight: 500;
+    //transition: color 0.3s ease 0s;
+    text-align: center;
+    margin: 0 auto;
+    outline: none;
+    box-shadow: none;
+    border-radius: rem(8);
+}
+
+.input { 
+    padding: rem(10) rem(15); 
+    border-bottom: 1px solid rgba(28, 27, 27, 0.387);
+    margin: rem(15);
+    outline:none;
+    
+}
+
+.input-file {
+    border: 1px solid transparent !important;
+}
+
+.line {
+    border: 0;
+    clear:both;
+    display:block;               
+    background-color: $hrSettinsColor;
+    height: 1px;
+}
+
+.title {
+    font-size: rem(22);
+    font-weight: 500;
+    color: $textSettinsColor;
+    padding-bottom: rem(10);
+}
+
+.textarea {
+    border: 1px solid rgba(62, 61, 61, 0.59);
+    padding: rem(25);
+    resize: none;
+    width: 100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    border-radius: rem(12);
+}
+
+.value-label {
+    font-size: rem(18);
+    font-weight: 500;
+    color: $menuColor;
+}
+
+.refresh {
+    cursor: pointer;
+    color: rgb(238, 186, 90);
+    @media (any-hover: hover){
+        &:hover{
+            color: rgb(246, 176, 47);
+        }
+    }
+}
+

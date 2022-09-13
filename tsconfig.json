@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "target": "ES6",
+      "module": "ES6",
+      "strict": false,
+      "jsx": "preserve",
+      "importHelpers": true,
+      "moduleResolution": "node",
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "baseUrl": ".",
+      "types": [
+        "webpack-env"
+      ],
+      "paths": {
+        "@/*": [
+          "src/*"
+        ]
+      },
+      "lib": [
+        "ES6",
+        "dom",
+        "dom.iterable", 
+        "scripthost"
+      ]
+    },
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.vue",
+      "tests/**/*.ts",
+      "tests/**/*.tsx", "src/utils/messages.ts", "src/utils/message.plugin.ts",
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+    
+  }
+  
