@@ -37,19 +37,19 @@ import { State, Action, Getter } from 'vuex-class';
       "TextInput": TextInput
     },
     validations: {
-        login: { 
-            required: helpers.withMessage('Поле не может быть пустым', required),
-            minLength: helpers.withMessage('Должно быть больше 1 символа', minLength(2)),
-            $autoDirty: true
-        },
-        email: { 
-            required: helpers.withMessage('Поле не может быть пустым', required),
-            email: helpers.withMessage('Введите корректный email', email)
-        },
-        password: { 
-            required: helpers.withMessage('Поле не может быть пустым', required),
-            minLength: helpers.withMessage('Должно быть больше 6 символов', minLength(6))
-        }
+      login: { 
+        required: helpers.withMessage('Поле не может быть пустым', required),
+        minLength: helpers.withMessage('Должно быть больше 1 символа', minLength(2)),
+        $autoDirty: true
+      },
+      email: { 
+        required: helpers.withMessage('Поле не может быть пустым', required),
+        email: helpers.withMessage('Введите корректный email', email)
+      },
+      password: { 
+        required: helpers.withMessage('Поле не может быть пустым', required),
+        minLength: helpers.withMessage('Должно быть больше 6 символов', minLength(6))
+      }
     }
 })
 
@@ -64,58 +64,58 @@ signin: boolean = false
 v$: any = useVuelidate({ $lazy: true, $autoDirty: true})
 
 get loginError() {
-    let loginError = []
-    if (this.v$.$errors) {
+  let loginError = []
+  if (this.v$.$errors) {
     this.v$.$errors.forEach(error=> {
-        if (error.$property === 'login') {
-       loginError.push(error)
-        }
+      if (error.$property === 'login') {
+        loginError.push(error)
+      }
     })
-      return loginError
-    } else {
-      return loginError
-    }
+    return loginError
+  } else {
+    return loginError
+  }
 }
 get emailError() {
-    let emailError = [] 
-    if (this.v$.$errors) {
+  let emailError = [] 
+  if (this.v$.$errors) {
     this.v$.$errors.forEach(error=> {
-        if (error.$property === 'email') {
+      if (error.$property === 'email') {
         emailError.push(error)
-        }
+      }
     })
     return emailError
-    } else {
+  } else {
     return emailError
-    }
+  }
 }
 get passError() {
-    let phoneError = [] 
-    if (this.v$.$errors) {
+  let phoneError = [] 
+  if (this.v$.$errors) {
     this.v$.$errors.forEach(error=> {
-        if (error.$property === 'password') {
+      if (error.$property === 'password') {
         phoneError.push(error)
-        }
+      }
     })
     return phoneError
-    } else {
+  } else {
     return phoneError
-    }
+  }
 }
 
 @Watch('signin', { immediate: true })
 changeSignin(value: boolean) {
-    if (value == true) {
-      this.login = 'testtest'
-    } else return
+  if (value == true) {
+    this.login = 'testtest'
+  } else return
 }
 
 changeAction() {
-    this.signin = !this.signin
-    this.login = ''
-    this.email = ''
-    this.password = null
-    this.v$.$reset()
+  this.signin = !this.signin
+  this.login = ''
+  this.email = ''
+  this.password = null
+  this.v$.$reset()
 }
 
 autorizationUser(payload) {
@@ -127,26 +127,22 @@ registrationUser(payload: Object) {
 }
 
 submitHandler() {
-    
-
-    this.v$.$validate()
-    
-    if (!this.v$.$error) {
-
-        if (this.signin) {
-            let payload = {email: this.email, password: this.password}
-            this.autorizationUser(payload)
-        } else {
-            let payload = {email: this.email, password: this.password, login: this.login}
-            this.registrationUser(payload)
-        }
-
-        this.v$.$reset()
-        
+  this.v$.$validate()
+  
+  if (!this.v$.$error) {
+    if (this.signin) {
+      let payload = {email: this.email, password: this.password}
+      this.autorizationUser(payload)
     } else {
-        return
+      let payload = {email: this.email, password: this.password, login: this.login}
+      this.registrationUser(payload)
     }
+    this.v$.$reset()
+  } else {
+    return
+  }
 }
+
 }
 
 </script>

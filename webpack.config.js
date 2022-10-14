@@ -84,9 +84,6 @@ module.exports = {
       }),
       new VueLoaderPlugin(),
       new DuplicatesPlugin(),
-      //new webpack.HotModuleReplacementPlugin(),
-      //new webpack.optimize.OccurrenceOrderPlugin(),
-      //new webpack.NoEmitOnErrorsPlugin(),
     ],
     module: {
       rules: [
@@ -101,10 +98,6 @@ module.exports = {
                 {
                     loader: MiniCssExtractPlugin.loader,
                     options: {
-                        //implementation: require('scss'),
-                        /* sassOptions: {
-                            indentedSyntax: true // optional
-                        } */
                     }
                 },
                 'css-loader', 'sass-loader'

@@ -24,15 +24,14 @@
               :key="key"
               @onChange='onChange'
        ></TablePrime>
-      
       </div>
     </div>
   </div>
   
   <ThisPopup v-if="popupVisible" @changePopup="changePopup">
-        <template #task>
-          <CreateTask @closePopup='closePopup'></CreateTask>
-        </template>
+    <template #task>
+      <CreateTask @closePopup='closePopup'></CreateTask>
+    </template>
   </ThisPopup>
 </template>
 
@@ -44,12 +43,12 @@ import TablePrime from '../../components/common/TablePrime.vue';
 import { Prop, Watch } from 'vue-property-decorator';
 import Typography from 'ant-design-vue/lib/typography/Typography';
 @Options({
-    components: {
-      'CreateTask': CreateTask,
-      "ThisPopup": ThisPopup,
-      'TablePrime': TablePrime,
-      'Typography': Typography
-    }
+  components: {
+    'CreateTask': CreateTask,
+    "ThisPopup": ThisPopup,
+    'TablePrime': TablePrime,
+    'Typography': Typography
+  }
 })
 
 export default class Task extends Vue {
@@ -83,7 +82,6 @@ export default class Task extends Vue {
     setTimeout(() => {
       this.dataGrid = val
     }, 600)
-    
   }
 
   changePopup() {
@@ -97,15 +95,13 @@ export default class Task extends Vue {
       let str = 'task/noname'
       this.$store.commit('setError', str)
       setTimeout(() => {
-         this.$store.commit('clearError')
+        this.$store.commit('clearError')
       }, 3000);
-     
     }
   }
 
   mounted() {
     this.$store.dispatch('getTaskList')
-    console.log('fio', this.fio)
   }
 }
 </script>

@@ -1,46 +1,20 @@
 .input {
     &__item {
-        display: grid;
-        grid-template-columns: rem(110) minmax(rem(160), rem(500));
-        padding: rem(20) rem(5);
-        position: relative;
-        //gap: rem(15);
-        @media (max-width:em(700)){
-          padding: rem(10) rem(5);
-        }
+      display: grid;
+      grid-template-columns: rem(110) minmax(rem(160), rem(500));
+      padding: rem(20) rem(5);
+      position: relative;
+      @media (max-width:em(700)){
+        padding: rem(10) rem(5);
+      }
     }
 
     &__label {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        color: rgb(165, 128, 73);
-        font-weight: 500;
-    }
-
-    &__file {
-      /* position: absolute;
-      z-index: 5;
-      top: rem(-5);
-      left: rem(105);
-      width: rem(148);
-      height: rem(40);
-      opacity: 0.9;
-      font-size: 0;
-      border-radius: rem(8); */
-      //cursor: pointer;
-    }
-
-    &__button-file {
-        /* z-index: 4;
-        left: rem(120);
-        top: rem(10);
-        position: absolute;
-        display: inline-block;
-        transform: translateX();
-        border-radius: rem(8);
-        background-color: rgb(59, 49, 140);
-        color: white; */
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: rgb(165, 128, 73);
+      font-weight: 500;
     }
 
     &__clear-btn {

@@ -14,9 +14,7 @@ export const mutations: MutationTree<Setting> = {
     if (!str.includes('null') && !str.includes('undefined') && (str !=='') && (str !==' ')) {
       state.fio = `${Name} ${Surname}`
     }
-    
   }
-
 };
 
 

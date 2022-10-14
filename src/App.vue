@@ -152,7 +152,6 @@ export default class App extends Vue {
     display: flex;
     padding: 20px 20px 20px 270px;
   }
-
 }
 
 </style>

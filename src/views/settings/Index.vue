@@ -95,7 +95,6 @@ export default class Settings extends Vue {
   }
 
   submitPersonSettings() {
-
     this.$store.dispatch('updatePersonData', this.PersonData)
   }
 
@@ -103,11 +102,6 @@ export default class Settings extends Vue {
   changepersonData(val: PersonData) {
     this.PersonData = {...val}
   }
-
-  /* @Watch('PersonData', { immediate: true, deep: true })
-  changedVsssalue(val: any) {
-    console.log('PersonData', val)  
-  } */ 
   
   changeName(val) {
     this.PersonData.Name = val ?? null

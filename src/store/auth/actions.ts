@@ -34,7 +34,6 @@ export const actions: ActionTree<Auth, RootState> = {
 
         const token = await this.dispatch('getIdToken')
         commit('setAuth', token)
-
         commit('setMessage', type)
         setTimeout(() => {
           commit('clearMessage')

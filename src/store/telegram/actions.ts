@@ -35,48 +35,46 @@ export const actions: ActionTree<Telegram, RootState> = {
     sessionTelegramString = sessionString
   },
   async getCode({commit}, phoneClient: string) {
+    commit('SET_LOAD')
+    
+    await client.connect()
+    const { phoneCodeHash } = await client.sendCode( 
+      {
+        apiId,
+        apiHash
+      },
+      String(phoneClient),
+      false
+    ).catch((error)=>{
       commit('SET_LOAD')
-      
-      await client.connect()
-      const { phoneCodeHash } = await client.sendCode( 
-          {
-            apiId,
-            apiHash
-          },
-          String(phoneClient),
-          false
-      ).catch((error)=>{
-        commit('SET_LOAD')
-          console.log('errorerrorerror', error)
-      })
+        console.log('errorerrorerror', error)
+    })
 
-      phoneThisClient = phoneClient;
-      codeHashThisClient = phoneCodeHash;
-      commit('SET_LOAD')
-      commit('SET_PHONE_AND_HASHCODE', {phoneClient, phoneCodeHash})
+    phoneThisClient = phoneClient;
+    codeHashThisClient = phoneCodeHash;
+    commit('SET_LOAD')
+    commit('SET_PHONE_AND_HASHCODE', {phoneClient, phoneCodeHash})
   },
 
   async signIn({commit, dispatch}, codeClient: number) {
-      //вход с кодом и хэшом
-      commit('SET_LOAD')
+    //вход с кодом и хэшом
+    commit('SET_LOAD')
 
-      await client.connect(); 
+    await client.connect(); 
 
-      const objSignIn = {
-          phoneNumber: String(phoneThisClient),
-          phoneCodeHash: codeHashThisClient,
-          phoneCode: String(codeClient)
-      }
+    const objSignIn = {
+      phoneNumber: String(phoneThisClient),
+      phoneCodeHash: codeHashThisClient,
+      phoneCode: String(codeClient)
+    }
 
-      await client.invoke(
-        new Api.auth.SignIn(objSignIn)
-      )
+    await client.invoke(
+      new Api.auth.SignIn(objSignIn)
+    )
 
-      commit('SET_LOAD')
-
-      const sessionString =  client.session.save()
-      
-      commit('SET_SESSION_STRING', sessionString)
+    commit('SET_LOAD')
+    const sessionString =  client.session.save()
+    commit('SET_SESSION_STRING', sessionString)
   },
   //выход
   async logOut({commit}) {
@@ -85,12 +83,12 @@ export const actions: ActionTree<Telegram, RootState> = {
   },
   //Проверка , аутентификации  
   async checkAuthorization() {
-      await client.connect(); 
-      if (await client.checkAuthorization()) 
-      {
-        console.log("Я залогинен ");
-      } else{
-        console.log("Система готова. Но я не залогинен");
-      }
+    await client.connect(); 
+    if (await client.checkAuthorization()) 
+    {
+      console.log("Я залогинен ");
+    } else{
+      console.log("Система готова. Но я не залогинен");
+    }
   },
 };

@@ -1,5 +1,4 @@
 
-
 import { Module } from 'vuex';
 import { Task } from './types';
 import { RootState } from '../types';
